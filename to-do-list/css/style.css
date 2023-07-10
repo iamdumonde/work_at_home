@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: Helvetica, sans-serif;
+}
+
+ul.todolist {
+    padding: 0;
+    list-style-type: none;
+}
+
