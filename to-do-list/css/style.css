@@ -9,6 +9,20 @@ body {
     padding: 0;
     line-height: 1.5;
     font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #616e68;
+}
+
+h1 {
+    font-size: 4vw;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+input {
+    width: 40vw;
 }
 
 ul.todolist {
@@ -16,3 +30,58 @@ ul.todolist {
     list-style-type: none;
 }
 
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    font-size: 14px;
+    font-weight: normal;
+    width: 40vw;
+
+}
+
+.pstatus {
+    font-size: 2vw;
+    background-image: linear-gradient(to left, rgba(236, 31, 31, 0), rgb(81, 36, 36));
+    color: azure;
+    font-weight: bold;
+}
+
+/*  */
+/* .checked {
+} */
+
+.checked::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 14px;
+    left: 16px;
+    text-decoration: line-through;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+ul li {
+    font-size: 1rem;
+    font-weight: bolder;
+    background: rgb(51, 102, 145);
+    color: #fff;
+}
+
+/* .cercle {
+} */
+
+.cercle::before {
+    content: "";
+    position: absolute;
+    border: solid;
+    border-width: 2px 2px 2px 2px;
+    top: 14px;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;  
+}

@@ -38,18 +38,19 @@ function updateStatus() {
     }
 }
 
-function insertTodos() {
 
+function insertTodos() {
     //création balise
     const liElement = document.createElement('li');
     //ajout de classe 'todo' (<li class="todo"></li>)
-    liElement.classList.add('todo');
-    //Ins"rer du texte
+    liElement.classList.add('todo', 'cercle', 'cercle::before');
+    //Insérer du texte
     const task = todos[todos.length - 1];
     liElement.innerHTML = task;
     console.log(liElement);
 
     todolist.append(liElement);
-
-
 }
+
+//add a checked symbol
+
