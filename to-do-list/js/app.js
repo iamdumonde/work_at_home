@@ -12,7 +12,10 @@ const todos = [];
 todoAdd.addEventListener('keydown', addTodo);//onclick
 
 //Fonctions
-
+/**
+ * Cette fonction permet d'ajouter les tâches à chaque fois
+ * @param {*} e 
+ */
 function addTodo(e) {
     if (e.key === "Enter") {
         const todo = todoAdd.value;
@@ -29,6 +32,9 @@ function addTodo(e) {
     updateStatus();
 }
 
+/**
+ * Cette fonction permet d'afficher ou non le paragraphe 'aucune tâche planifiée'
+ */
 function updateStatus() {
     if (todos.length > 0) {
         statusParagraph.style.display = "none";
@@ -39,6 +45,9 @@ function updateStatus() {
 }
 
 
+/**
+ * Cette fonction est celle qui permet de créer de nouveaux li à chaque fois une nouvelle tâche est ajoutée
+ */
 function insertTodos() {
     //création balise
     const liElement = document.createElement('li');
@@ -53,4 +62,8 @@ function insertTodos() {
 }
 
 //add a checked symbol
+todolist.addEventListener('click', function(){
+    console.log('click');
+    
+});
 
