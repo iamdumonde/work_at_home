@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue | Intro</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <br>
+    </div>
+
+    <div id="app1">
+        <span v-bind:title="msg">
+            Passez votrez souris sur moi pendant quelques secondes pour voir mon titre lié dynamiquement !
+        </span>
+    </div>
+
+    <div id="app2">
+        <p v-if="seen">Maintenant tout va bien !</p>
+        <p v-if="motor === 'Lamborgini'">J'ai un {{motor}}.</p>
+        <p v-else-if="motor === 'Mercedes Rail Tail'">J'aimerais me prendre un {{motor}}.</p>
+        <p v-else>Franchement, je n'ai aucune idée du genre de voiture que je veux prendre.</p>
+    </div>
+
+    <div id="app3">
+        <ol>
+            <li v-for="brand in motorBrand">
+                La marque : {{brand}}
+            </li>
+        </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="intro.js"></script>
+</body>
+</html>
