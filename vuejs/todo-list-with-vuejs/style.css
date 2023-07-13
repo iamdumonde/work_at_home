@@ -1,0 +1,30 @@
+*, 
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+ul li {
+    list-style-type: none;
+    background-color: rgb(191, 200, 226);
+}
+
+ul li span {
+    background-color: #fff;
+}
+
+.line-through {
+    text-decoration: line-through;
+}

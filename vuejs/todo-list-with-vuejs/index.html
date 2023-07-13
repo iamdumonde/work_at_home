@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesome Links -->
+    <title>Todo List | App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <h1>Plan Your Day, And Be More Productive</h1>
+            <form @submit.prevent="addNewTasks">
+                <textarea v-model="newTasks" placeholder="Enter all your today tasks !"></textarea>
+                <button>Add new tasks !</button>
+            </form>
+            <ul>
+                <li v-for="task in tasksExample" :key="task.id">
+                    <input type="checkbox" v-model="task.line_through">
+                    <span :class="{line_through: task.line_through}">{{ task.tasksTodo }}</span>
+                    <button @click="removeTheTasks()">🚯</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="module">
+        import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.esm-browser.min.js';
+
+        //Each tasks added must have an id
+        let id = 0;
+
+        createApp({
+            data() {
+                return {
+                    newTasks: '',
+                    tasksExample: [
+                        { id: id++, tasksTodo: 'Today I must clean my house !', line_through: true },
+
+                        { id: id++, tasksTodo: 'Today I must paint my child room !', line_through: false },
+
+                        { id: id++, tasksTodo: 'Today I want take a break !', line_through: false},
+                    ]
+                }
+            },
+
+            methods: {
+                addNewTasks(){
+                    this.tasksExample.push({tasksTodo: this.newTasks});
+                    this.newTasks = '';
+                },
+
+                removeTheTasks(task){
+                    this.tasksExample.splice(task, 1)
+                }
+            },
+
+            computed: {
+
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
